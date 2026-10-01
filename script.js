@@ -148,11 +148,13 @@ document.addEventListener('DOMContentLoaded', function () {
   ================================================ */
   const typingEl = document.getElementById('typing-text');
   if (typingEl) {
+    // Roles kept in sync with the resume's actual stack (ASP.NET, Django, PHP)
     const roles = [
-      'Software Engineer',
+      'Software Developer',
       'Backend Developer',
       'ASP.NET Developer',
       'Django Developer',
+      'PHP Developer',
     ];
 
     let roleIndex  = 0;
@@ -206,7 +208,8 @@ document.addEventListener('DOMContentLoaded', function () {
   function copyEmail() {
     if (!emailCard) return;
 
-    const email = emailCard.getAttribute('data-email') || 'pushparajsinh@example.com';
+    // Falls back to the real address if data-email is ever missing
+    const email = emailCard.getAttribute('data-email') || 'pushparajsinhpjadeja@gmail.com';
 
     // Use Clipboard API
     if (navigator.clipboard && window.isSecureContext) {
@@ -346,9 +349,9 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   /* ================================================
-     13. SCROLL PROGRESS INDICATOR (optional)
+     13. SCROLL PROGRESS INDICATOR
   ================================================ */
-  // Create a thin progress bar at the top of the page
+  // Thin progress bar at the top of the page
   const progressBar = document.createElement('div');
   progressBar.setAttribute('aria-hidden', 'true');
   progressBar.style.cssText = [
